@@ -1,0 +1,46 @@
+<h4>Create a product:</h4>
+<div *ngIf="error">
+  <hr />
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true" (click)="hideError()">&times;</span>
+    </button>
+    <strong>Warning!</strong> Error creating product.
+  </div>
+  <hr />
+</div>
+<form class="form-horizontal" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name" class="col-sm-3 control-label">Target ID: 1</label>
+    <input type="hidden" name="targetImageId" value="1" />
+    <img class="col-sm-3" src="https://via.placeholder.com/300/09f/fff.png" alt="" />
+    <label for="name" class="col-sm-3 control-label">Source ID: 2</label>
+    <input type="hidden" name="targetImageId" value="2" />
+    <img class="col-sm-3" src="https://via.placeholder.com/300/09f/fff.png" alt="" />
+  </div>
+
+  <div class="form-group">
+    <label for="name" class="col-sm-4 control-label">Puanlama</label>
+    <input type="radio" name="point" value="1" formControlName="brand" />1
+    <input type="radio" name="point" value="2" formControlName="brand" />2
+    <input type="radio" name="point" value="3" formControlName="brand" />3
+    <input type="radio" name="point" value="4" formControlName="brand" />4
+    <input type="radio" name="point" value="5" formControlName="brand" />5
+    <input type="radio" name="point" value="6" formControlName="brand" />6
+    <input type="radio" name="point" value="7" formControlName="brand" />7
+    <input type="radio" name="point" value="8" formControlName="brand" />8
+    <input type="radio" name="point" value="9" formControlName="brand" />9
+    <input type="radio" name="point" value="10" formControlName="brand" />10
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!productForm.valid"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</form>
